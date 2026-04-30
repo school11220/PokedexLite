@@ -64,10 +64,10 @@ export type PokemonDetailResponse = {
   name: string;
   height: number;
   weight: number;
+<<<<<<< HEAD
   cries?: {
     latest: string;
     legacy: string;
-  };
   sprites: {
     front_default: string | null;
     front_shiny: string | null;
@@ -79,16 +79,13 @@ export type PokemonDetailResponse = {
       home?: {
         front_default: string | null;
         front_shiny: string | null;
+=======
+  sprites: {
+    front_default: string | null;
+    other?: {
+      "official-artwork"?: {
+        front_default: string | null;
       };
-    };
-  };
-  types: Array<{
-    slot: number;
-    type: NamedApiResource;
-  }>;
-  abilities: Array<{
-    is_hidden: boolean;
-    ability: NamedApiResource;
   }>;
   stats: Array<{
     base_stat: number;

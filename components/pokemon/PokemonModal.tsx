@@ -74,7 +74,6 @@ export function PokemonModal({
   };
 
   const displayImage = isShiny ? (pokemon.shinyArtwork || pokemon.image) : pokemon.image;
-
   return (
     <motion.div
       className="fixed inset-0 z-[60] flex items-end justify-center bg-black/80 p-0 backdrop-blur-sm md:items-center md:p-6"
@@ -103,12 +102,12 @@ export function PokemonModal({
                 isPlaying && "border-primary text-primary shadow-[0_0_12px_rgba(255,180,171,0.4)]"
               )}
               onClick={playCry}
-              aria-label="Play Pokémon cry"
+              aria-label="Play Pokemon cry"
             >
               <Volume2 aria-hidden="true" className={cn("h-5 w-5", isPlaying && "animate-pulse")} />
             </button>
           )}
-          
+
           {pokemon.shinyArtwork && (
             <button
               type="button"
@@ -116,8 +115,8 @@ export function PokemonModal({
                 "flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-black/50 text-neutral-400 transition hover:bg-black/80 hover:text-white",
                 isShiny && "border-yellow-400/50 text-yellow-400 shadow-[0_0_12px_rgba(250,204,21,0.3)]"
               )}
-              onClick={() => setIsShiny(!isShiny)}
-              aria-label="Toggle Shiny version"
+              onClick={() => setIsShiny((current) => !current)}
+              aria-label="Toggle shiny version"
             >
               <Sparkles aria-hidden="true" className="h-5 w-5" />
             </button>
@@ -128,7 +127,7 @@ export function PokemonModal({
             type="button"
             className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-black/50 text-neutral-400 transition hover:bg-black/80 hover:text-white"
             onClick={onClose}
-            aria-label="Close Pokémon details"
+            aria-label="Close Pokemon details"
           >
             <X aria-hidden="true" className="h-5 w-5" />
           </button>
@@ -142,7 +141,7 @@ export function PokemonModal({
           <div className="relative z-10 flex h-full w-full items-center justify-center">
             {displayImage ? (
               <motion.div
-                key={isShiny ? 'shiny' : 'normal'}
+                key={isShiny ? "shiny" : "normal"}
                 initial={{ opacity: 0, scale: 0.9, rotate: -5 }}
                 animate={{ opacity: 1, scale: 1, rotate: 0 }}
                 transition={{ type: "spring", stiffness: 260, damping: 20 }}
@@ -177,7 +176,7 @@ export function PokemonModal({
                 className="font-display text-3xl font-black text-white md:text-4xl"
               >
                 {formatPokemonName(pokemon.name)}
-                {isShiny && <Sparkles className="ml-2 inline-block h-6 w-6 text-yellow-400" />}
+                {isShiny ? <Sparkles className="ml-2 inline-block h-6 w-6 text-yellow-400" /> : null}
               </h2>
               <span className="mt-1 font-display text-sm font-bold text-neutral-400">
                 {formatDexNumber(pokemon.id)}

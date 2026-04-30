@@ -4,6 +4,13 @@ out
 dist
 .vercel
 .env*.local
+.env
+.DS_Store
+<<<<<<< HEAD
+=======
+.env
+.DS_Store
+>>>>>>> 8a573c8 (Add Clerk auth, UI refinements, and favorites sync)
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*

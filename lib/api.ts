@@ -61,11 +61,9 @@ function normalizePokemonDetail(detail: PokemonDetailResponse): PokemonDetail {
   const artwork = detail.sprites.other?.["official-artwork"]?.front_default ?? null;
   const homeSprite = detail.sprites.other?.home?.front_default ?? null;
   const sprite = detail.sprites.front_default ?? null;
-
   const shinyArtwork = detail.sprites.other?.["official-artwork"]?.front_shiny ?? null;
   const shinyHomeSprite = detail.sprites.other?.home?.front_shiny ?? null;
   const shinySprite = detail.sprites.front_shiny ?? null;
-
   return {
     id: detail.id,
     name: detail.name,
