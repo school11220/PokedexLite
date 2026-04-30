@@ -10,6 +10,8 @@ A production-ready Pokédex assignment app built with Next.js App Router, TypeSc
 - Favorites persisted in `localStorage`
 - Favorites-only view
 - Accessible detail modal with keyboard and overlay close behavior
+- **Shiny Toggle**: Switch between regular and shiny versions of Pokémon
+- **Pokémon Cries**: Listen to authentic Pokémon cries directly in the app
 - Loading skeletons, retryable errors, and empty states
 - Responsive layout for mobile, tablet, and desktop
 - Dark-mode-first theme using Tailwind design tokens
