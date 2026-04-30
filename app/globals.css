@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  --background: #1f0f0d;
+  --foreground: #fbdbd7;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100%;
+  margin: 0;
+  background:
+    radial-gradient(circle at 20% -10%, rgba(220, 38, 38, 0.18), transparent 28rem),
+    radial-gradient(circle at 85% 10%, rgba(120, 42, 32, 0.18), transparent 24rem),
+    linear-gradient(180deg, #160806 0%, var(--background) 42%, #120605 100%);
+  color: var(--foreground);
+  font-family: var(--font-inter), Arial, Helvetica, sans-serif;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 2px solid rgba(255, 180, 171, 0.75);
+  outline-offset: 3px;
+}
+
+@layer components {
+  .glass-panel {
+    @apply border border-white/5 bg-dex-panel/80 shadow-panel backdrop-blur-xl;
+  }
+
+  .rim-light {
+    box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.08);
+  }
+
+  .control {
+    @apply min-h-11 rounded-lg border border-white/10 bg-dex-black px-4 text-sm text-on-surface shadow-sm transition placeholder:text-on-surface-variant/50 hover:border-outline-variant focus:border-primary-container focus:outline-none focus:ring-1 focus:ring-primary-container;
+  }
+
+  .hide-scrollbar {
+    scrollbar-width: none;
+  }
+
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .shimmer {
+    background: linear-gradient(90deg, #1a1a1a 0%, #2d2523 50%, #1a1a1a 100%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite linear;
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: 200% 0;
+    }
+
+    100% {
+      background-position: -200% 0;
+    }
+  }
+}
