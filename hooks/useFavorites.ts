@@ -56,7 +56,7 @@ export function useFavorites() {
       return;
     }
 
-    const metadataFavorites = user.publicMetadata?.favorites;
+    const metadataFavorites = user.unsafeMetadata?.favorites;
     if (!Array.isArray(metadataFavorites)) {
       return;
     }
@@ -94,8 +94,8 @@ export function useFavorites() {
 
     if (isSignedIn && user) {
       void user.update({
-        publicMetadata: {
-          ...user.publicMetadata,
+        unsafeMetadata: {
+          ...user.unsafeMetadata,
           favorites: nextFavorites
         }
       });
